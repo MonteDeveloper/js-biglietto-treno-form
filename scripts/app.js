@@ -148,7 +148,7 @@ elGenerateButton.addEventListener("click", function () {
     let lastNameValue = document.getElementById("lastName").value;
     let birthdayValue = document.getElementById("datepicker").value;
     let kmValue = document.getElementById("kmInput").value;
-    let classValue = document.getElementById("classSelect").value;
+    let classValue = document.getElementById("classSelect").options[document.getElementById("classSelect").selectedIndex].text;
 
     let departure = getNextDeparture();
     let arrive = getArrive(departure, kmValue);
@@ -178,7 +178,7 @@ elGenerateButton.addEventListener("click", function () {
             <div class="col-12 d-flex justify-content-between bg-warning p-3">
                 <h2 class="h4">
                     <i class="fa-solid fa-train"></i>
-                    TRAIN TICKET
+                    TRAIN TICKET | ${classValue} CLASS
                 </h2>
                 <span class="h4">
                     ${ticketId}
