@@ -110,6 +110,15 @@ function getRandomInt(num){
     return parseInt(finalNum);
 }
 
+function getRandomChar(){
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const charactersLength = characters.length;
+    result = characters.charAt(Math.floor(Math.random() * charactersLength));
+
+    return result;
+}
+
 const elGenerateButton = document.getElementById("generateButton");
 
 elGenerateButton.addEventListener("click", function () {
