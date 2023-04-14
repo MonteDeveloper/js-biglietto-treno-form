@@ -98,6 +98,18 @@ function convertNumToTime(number) {
     return time;
 }
 
+function getRandomInt(num){
+    let finalNum = "";
+
+    while(num > 0){
+        num--;
+
+        finalNum += Math.floor(Math.random() * 10);
+    }
+
+    return parseInt(finalNum);
+}
+
 const elGenerateButton = document.getElementById("generateButton");
 
 elGenerateButton.addEventListener("click", function () {
