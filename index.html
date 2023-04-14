@@ -60,129 +60,19 @@
 
                     <div class="col-4">
                         <div class="form-floating">
-                            <select class="form-control">
+                            <select class="form-control" id="classSelect">
                                 <option value="1">Economy</option>
                                 <option value="2">Buisness</option>
                             </select>
-                            <label>Class</label>
+                            <label for="classSelect">Class</label>
                         </div>
                     </div>
                 </div>
 
-                <a href="#" class="btn btn-success">Generate Ticket</a>
+                <a href="#" class="btn btn-success" id="generateButton">Generate Ticket</a>
             </div>
-            <div class="card-footer">
-                <div class="bg-white rounded border row overflow-hidden text-uppercase">
-                    <!-- header ticket -->
-                    <div class="col-12 d-flex justify-content-between bg-warning p-3">
-                        <h2 class="h4">
-                            <i class="fa-solid fa-train"></i>
-                            TRAIN TICKET
-                        </h2>
-                        <span class="h4">
-                            T1234567890
-                        </span>
-                    </div>
-
-                    <!-- body ticket -->
-                    <div class="row py-3 text-start">
-                        <!-- column -->
-                        <div class="col-4">
-                            <div class="mb-3">
-                                <h3 class="h6">
-                                    name of passenger
-                                </h3>
-                                <span>
-                                    Lorenzo Montello
-                                </span>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-6">
-                                    <h3 class="h6">
-                                        departure
-                                    </h3>
-                                    <span>
-                                        14:30
-                                    </span>
-                                </div>
-                                <div class="col-6">
-                                    <h3 class="h6">
-                                        arrive
-                                    </h3>
-                                    <span>
-                                        16:50
-                                    </span>
-                                </div>
-                            </div>
-                            <div>
-                                <h3 class="h6">
-                                    date
-                                </h3>
-                                <span>
-                                    12 may
-                                </span>
-                            </div>
-                        </div>
-
-                        <!-- column -->
-                        <div class="col-4">
-                            <div class="mb-3">
-                                <h3 class="h6">
-                                    price
-                                </h3>
-                                <span>
-                                    45 euro
-                                </span>
-                            </div>
-                            <div>
-                                <h3 class="h6">
-                                    discount type
-                                </h3>
-                                <span>
-                                    none
-                                </span>
-                            </div>
-                        </div>
-
-                        <!-- column -->
-                        <div class="col-4">
-                            <div class="row mb-3">
-                                <div class="col-6">
-                                    <h3 class="h6">
-                                        train
-                                    </h3>
-                                    <span>
-                                        3924
-                                    </span>
-                                </div>
-                                <div class="col-6">
-                                    <h3 class="h6">
-                                        seat
-                                    </h3>
-                                    <span>
-                                        a18
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <h3 class="h6">
-                                    platform
-                                </h3>
-                                <span>
-                                    3
-                                </span>
-                            </div>
-                            <div>
-                                <h3 class="h6">
-                                    carriage n.
-                                </h3>
-                                <span>
-                                    4
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="card-footer" id="ticketContainer">
+                
             </div>
         </div>
 
