@@ -47,6 +47,57 @@ function roundNearest5(num) {
     return Math.round(num / 5) * 5;
 }
 
+function getarrive(departureStr, km){
+    const trainVelocityKmH = 150; //km/h
+
+    timeTravel = convertNumToTime(km / trainVelocityKmH);
+
+    let totalInMinutes = (parseInt(timeTravel.split(":")[0]) * 60) + parseInt(timeTravel.split(":")[1]);
+    let otherMinutes = (parseInt(departureStr.split(":")[0]) * 60) + parseInt(departureStr.split(":")[1]);
+
+    let grandTotal = otherMinutes + totalInMinutes;
+
+    let finalHours = Math.floor(grandTotal / 60);
+    let finalMinutes = grandTotal % 60;
+
+    //format to '00'
+    finalHours = ("0" + finalHours).slice(-2);
+    finalMinutes = ("0" + finalMinutes).slice(-2);
+
+    return finalHours + ':' + finalMinutes;
+}
+
+function convertNumToTime(number) {
+    // Check sign of given number
+    var sign = (number >= 0) ? 1 : -1;
+
+    // Set positive value of number of sign negative
+    number = number * sign;
+
+    // Separate the int from the decimal part
+    var hour = Math.floor(number);
+    var decpart = number - hour;
+
+    var min = 1 / 60;
+    // Round to nearest minute
+    decpart = min * Math.round(decpart / min);
+
+    var minute = Math.floor(decpart * 60) + '';
+
+    // Add padding if need
+    if (minute.length < 2) {
+    minute = '0' + minute; 
+    }
+
+    // Add Sign in final result
+    sign = sign == 1 ? '' : '-';
+
+    // Concate hours and minutes
+    time = sign + hour + ':' + minute;
+
+    return time;
+}
+
 const elGenerateButton = document.getElementById("generateButton");
 
 elGenerateButton.addEventListener("click", function () {
