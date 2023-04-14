@@ -19,6 +19,33 @@ function getTicketPrice(age, km){
     return `${ticketPrice.toFixed(numberOfDecimal)} €`;
 }
 
+function getNextDeparture(){
+    const today = new Date();
+    let departureHours = today.getHours();
+    let departureMinutes = today.getMinutes();
+
+    //incremento i minuti di mezz'ora e li arrotondo rendendoli multipli di 5
+    departureMinutes = roundNearest5(departureMinutes + 30);
+
+    //faccio in modo che l'orario sia sempre compreso tra 00 e 23 e i minuti tra 00 e 59
+    if(departureMinutes >= 60){
+        departureMinutes -= 60;
+        departureHours += 1;
+        if(departureHours >= 24){
+            departureHours -= 24;
+        }
+    }
+
+    //format to '00'
+    departureHours = ("0" + departureHours).slice(-2);
+    departureMinutes = ("0" + departureMinutes).slice(-2);
+
+    return `${departureHours}:${departureMinutes}`;
+}
+
+function roundNearest5(num) {
+    return Math.round(num / 5) * 5;
+}
 
 const elGenerateButton = document.getElementById("generateButton");
 
