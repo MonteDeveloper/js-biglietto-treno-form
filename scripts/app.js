@@ -47,7 +47,7 @@ function roundNearest5(num) {
     return Math.round(num / 5) * 5;
 }
 
-function getarrive(departureStr, km){
+function getArrive(departureStr, km){
     const trainVelocityKmH = 150; //km/h
 
     timeTravel = convertNumToTime(km / trainVelocityKmH);
@@ -119,6 +119,28 @@ function getRandomChar(){
     return result;
 }
 
+function getAgeFromDate(bdValue){
+    let today = new Date();
+    let birthDate = new Date(bdValue);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    let m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+
+    return age;
+}
+
+function getDiscountType(age){
+    if(age < 18){
+        return "JUNIOR";
+    }else if(age > 65){
+        return "SENIOR";
+    }else{
+        return "NONE";
+    }
+}
+
 const elGenerateButton = document.getElementById("generateButton");
 
 elGenerateButton.addEventListener("click", function () {
@@ -137,7 +159,7 @@ elGenerateButton.addEventListener("click", function () {
     let userAge = getAgeFromDate(birthdayValue);
     let price = getTicketPrice(userAge, kmValue);
     let ticketId = "T" + getRandomInt(10);
-    let todayDate;
+    let todayDate = (new Date()).toLocaleDateString();
     let discountType = getDiscountType(userAge);
 
     //controllo se tutti gli input sono stati riempiti dall'utente
